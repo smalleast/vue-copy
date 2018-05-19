@@ -2,45 +2,37 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
-  <script src="../node_modules/next-js-core2/dist/next-js-core2.js"></script>
-  <script src="../node_modules/axios/dist/axios.js"></script>
-  <script src="../node_modules/q/q.js"></script>
-  <script src="../src/vue-copy.js"></script>
+  <title>vue-copy dome</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.2.6/vue.js"></script>
+  <script src="dist/vue-copy.js"></script>
 </head>
 <body>
-<script>
+<div id="app"></div>
 
-  var MyBaseHttp = nx.declare({
-    extend: nx.Axios,
+<template id="t">
+  <div class="container">
+    <input type="text" v-model="message">
+    <button type="button"
+            v-clipboard:copy="message"
+            v-clipboard:success="copy">复制</button>
+  </div>
+</template>
+
+<script>
+  new Vue({
+    el: '#app',
+    template: '#t',
+    data: function () {
+      return {
+        message: '复制文件'
+      }
+    },
     methods: {
-      init: function () {
-        this.base();
-        this.setHeaders({
-          common: {
-            'Client-ABC': 'H5-fei'
-          }
-        })
-      },
-      toData: function (inResponse) {
-        return inResponse.data;
+      copy: function () {
+        alert('复制成功!')
       }
     }
-  });
-
-  var http = new MyBaseHttp();
-
-  http.get('data/test.json').then(function (response) {
-    console.log(response);
-  });
-
-  http.get('data/test1.json').then(function (response) {
-    console.log(response);
-    console.log('error...');
-  });
-
+  })
 </script>
 </body>
 </html>
