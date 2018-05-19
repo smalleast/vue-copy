@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="../node_modules/next-js-core2/dist/next-js-core2.js"></script>
+  <script src="../node_modules/axios/dist/axios.js"></script>
+  <script src="../node_modules/q/q.js"></script>
+  <script src="../src/vue-copy.js"></script>
+</head>
+<body>
+<script>
+
+  var MyBaseHttp = nx.declare({
+    extend: nx.Axios,
+    methods: {
+      init: function () {
+        this.base();
+        this.setHeaders({
+          common: {
+            'Client-ABC': 'H5-fei'
+          }
+        })
+      },
+      toData: function (inResponse) {
+        return inResponse.data;
+      }
+    }
+  });
+
+  var http = new MyBaseHttp();
+
+  http.get('data/test.json').then(function (response) {
+    console.log(response);
+  });
+
+  http.get('data/test1.json').then(function (response) {
+    console.log(response);
+    console.log('error...');
+  });
+
+</script>
+</body>
+</html>

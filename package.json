@@ -1,0 +1,32 @@
+{
+  "name": "vue-copy",
+  "version": "0.0.0",
+  "description": "Axios common features based on next toolkit.",
+  "homepage": "https://github.com/smalleast/vue-copy",
+  "author": {
+    "name": "smalleast",
+    "email": "382026180@qq.com"
+  },
+  "main": "dist/vue-copy.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "gulp"
+  },
+  "devDependencies": {
+    "del": "^2.2.1",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-load-plugins": "^1.2.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-size": "^2.1.0",
+    "gulp-uglify": "^2.1.2",
+    "next-js-core2": "github:smalleast/next-js-core2",
+    "yargs": "^4.7.1"
+  },
+  "dependencies": {
+    "axios": "^0.15.3",
+    "clipboard": "^2.0.0",
+    "node-sass": "^4.5.3",
+    "q": "^1.5.0"
+  }
+}
