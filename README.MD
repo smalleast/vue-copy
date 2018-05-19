@@ -3,27 +3,28 @@
 ```
 vue实现剪贴板的复制粘贴
 ```
-##安装依赖
+## 安装依赖
 
 npm install --save smalleast/vue-copy
-##用法：
 
-#对于vue-cli用户：
+## 用法：
+
+# 对于vue-cli用户：
 
 import Vue
 import VueCopy from 'vue-copy'
 
 Vue.use(VueCopy)
 
-对于独立使用：
+#对于独立使用：
 
 <script src="vue.min.js"></script>
 <!-- 必须在vue.js之后放置这一行 -->
 <script src="dist/vue-copy.min.js"></script>
 
 
-Demo：
-
+# Demo：
+```
 <template id="demo">
   <div class="container">
     <input type="text" v-model="message">
@@ -52,7 +53,7 @@ new Vue({
   }
 })
 </script>
-
+```
 ## 说明
 ```
 >  如有问题或者遇到坑请直接在 Issues 中提，或者可以加我的QQ 382026180
